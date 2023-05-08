@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .nav.active {
+    border-bottom-width: 2px;
+    border-color: black;
+  }
+
+  .tab.active {
+    display: block;
+    animation: showContent 0.5s ease-in-out 1;
+  }
+
+  .item.active {
+    border-color: black;
+  }
+
+  .rotate-y {
+    transform: rotateY(-50deg);
+  }
+  .translate-z {
+    transform: translateZ(9px);
+  }
+
+  @keyframes showContent {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}

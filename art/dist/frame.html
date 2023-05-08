@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <link rel="icon" href="./images/favicon.png" />
+    <title>OverView</title>
+  </head>
+  <body class="font-serif">
+    <!-- POP UP -->
+    <!-- Frame Zoom -->
+    <div class="hidden frame-zoom shadow-sm relative">
+      <div
+        class="z-20 top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] fixed w-full">
+        <div class="w-11/12 text-right mb-2 sm:w-1/2 lg:w-[40%] m-auto">
+          <button class="cursor-pointer text-3xl text-gray-600" id="close-btn">
+            ⓧ
+          </button>
+        </div>
+
+        <img
+          src="https://d29mtkonxnc5fw.cloudfront.net/thumbs/0vVm1Nm7ek99_InxMrdkiA.jpg"
+          alt=""
+          class="w-11/12 h-auto shadow-[0_0_20px_1px_rgba(0,0,0,1)] m-auto sm:w-1/2 lg:w-[40%]"
+          id="frame-zoom-img" />
+      </div>
+      <div
+        class="slider-prev z-30 fixed text-3xl left-4 top-2/4 text-gray-600 duration-200 w-10 h-10 flex flex-row justify-center items-center cursor-pointer md:w-12 md:h-12 md:text-4xl md:left-16">
+        ◁
+      </div>
+      <div
+        class="slider-next z-30 fixed text-3xl right-4 top-2/4 text-gray-600 duration-200 w-10 h-10 flex flex-row justify-center items-center cursor-pointer md:w-12 md:h-12 md:text-4xl md:right-16">
+        ▷
+      </div>
+    </div>
+    <!-- Notification -->
+    <div class="hidden notification">
+      <div
+        class="w-5/6 p-8 fixed z-20 top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] bg-white flex flex-col justify-center items-center rounded-lg border-green-600 border-2 sm:w-1/2 lg:w-3/12">
+        <h1 class="text-3xl font-medium">Thank You!</h1>
+        <p>Your product has been ordered</p>
+        <button
+          class="bg-green-400 w-full py-2 rounded-lg text-white shadow-md shadow-green-600 mt-4"
+          id="pop-btn">
+          OK
+        </button>
+      </div>
+    </div>
+
+    <!-- View -->
+    <div id="main-content" class="duration-200">
+      <header class="text-center py-6 shadow-md">
+        <a href="index.html" class="text-3xl"> OverView </a>
+      </header>
+      <main class="w-full p-4 md:py-10 md:px-20 lg:flex lg:flex-row lg:px-0">
+        <section
+          style="perspective: 1000px"
+          class="slider lg:w-3/5 lg:flex lg:flex-col lg:justify-center lg:items-center relative">
+          <div
+            class="flex flex-row justify-center items-center py-8 relative duration-500 hover:rotate-y"
+            style="transform-style: preserve-3d">
+            <div
+              id="border-frame"
+              class="relative h-[200px] w-[200px] min-[375px]:h-[250px] min-[375px]:w-[250px] min-[425px]:h-[300px] min-[425px]:w-[300px] sm:h-[400px] sm:w-[400px] xl:w-[500px] xl:h-[500px] border-[18px] border-solid border-transparent duration-500 shadow-[0_0_30px_18px_rgba(0,0,0,0.3)] translate-z"
+              style="
+                border-image-source: url('https://d29mtkonxnc5fw.cloudfront.net/site_assets/black-frame-face17.jpg');
+                border-image-slice: 80;
+                border-image-repeat: stretch;
+              ">
+              <img
+                id="mat-size-color"
+                src="./images/item_1.jpg"
+                class="h-[166px] w-[200px] min-[375px]:h-[216px] min-[375px]:w-[250px] min-[425px]:h-[266px] min-[425px]:w-[300px] sm:h-[366px] sm:w-[400px] xl:w-[500px] xl:h-[465px] object-cover duration-500 p-2 bg-clip-padding bg-white" />
+            </div>
+            <div
+              id="side-frame"
+              style="
+                transform: rotateY(-90deg);
+                background-image: url('https://d29mtkonxnc5fw.cloudfront.net/site_assets/black-vector-side9.jpg');
+              "
+              class="absolute duration-500 w-[18px] left-[235px] h-[200px] min-[375px]:h-[250px] min-[375px]:left-[286px] min-[425px]:h-[300px] min-[425px]:left-[336px] sm:h-[400px] sm:left-[494px] lg:left-[390px] xl:h-[500px] xl:left-[490px]"></div>
+          </div>
+
+          <div
+            class="frame-prev absolute left-[-10px] lg:left-10 top-2/4 text-white bg-[rgba(0,0,0,0.2)] hover:bg-[rgba(0,0,0,0.7)] duration-200 rounded-full w-8 h-8 flex flex-row justify-center items-center cursor-pointer md:w-10 md:h-10 md:text-xl">
+            ⬅
+          </div>
+          <div
+            class="frame-next absolute right-[-10px] lg:right-10 top-2/4 text-white bg-[rgba(0,0,0,0.2)] hover:bg-[rgba(0,0,0,0.7)] duration-200 rounded-full w-8 h-8 flex flex-row justify-center items-center cursor-pointer md:w-10 md:h-10 md:text-xl">
+            ➞
+          </div>
+        </section>
+
+        <section class="mt-9 lg:mt-0 lg:w-2/5 lg:px-8 xl:px-14">
+          <div class="text-center lg:text-left duration-500">
+            <h1 class="font-extralight text-3xl lg:text-5xl">
+              Addis Ababa Agriculture
+            </h1>
+          </div>
+
+          <div class="my-4 md:text-center lg:text-left">
+            <p>
+              Amazing layered rock patterns are visible on the Adrar Plateau,
+              near the town of Atar in northwestern Mauritania. Prints are
+              completed on Epson Professional Luster Paper.
+            </p>
+          </div>
+
+          <div class="flex flex-row justify-center items-center">
+            <select
+              name="size"
+              id="size"
+              class="focus:outline-none border-2 border-dotted border-gray-400 duration-200 rounded bg-white w-[300px] p-4 my-2 min-w-max md:w-1/2 lg:w-full">
+              <option value="none">Select a Print Size</option>
+              <option value="12x12">12.0" x 12.0"</option>
+              <option value="15x15">15.0" x 15.0"</option>
+              <option value="20x20">20.0" x 20.0"</option>
+              <option value="24x24">24.0" x 24.0"</option>
+            </select>
+          </div>
+
+          <div class="slider-tab">
+            <div
+              class="flex flex-row flex-wrap gap-5 my-3 justify-center items-center">
+              <a
+                class="text-sm font-bold cursor-pointer pb-1 duration-200 border-b-2 border-white nav active"
+                data-target="tab1"
+                >PROFILE</a
+              >
+
+              <a
+                class="text-sm font-bold cursor-pointer pb-1 duration-200 border-b-2 border-white nav"
+                data-target="tab2"
+                >MATTING</a
+              >
+            </div>
+            <div class="content-tabs">
+              <!-- Profile Tab -->
+              <div class="tab active hidden" id="tab1">
+                <div
+                  class="flex flex-row justify-center items-center gap-2 py-4 flex-wrap item-tab"
+                  id="item-tab">
+                  <img
+                    src="https://d29mtkonxnc5fw.cloudfront.net/site_assets/swatches/black-maple2-swatch.jpg"
+                    alt="Black Maple"
+                    class="w-11 h-11 border-[1px] border-slate-300 rounded-[2px] p-1 cursor-pointer duration-200 item active"
+                    id="1" />
+                </div>
+                <h2
+                  class="mt-3 mb-1 text-xl font-normal px-3 duration-200"
+                  id="frame-name">
+                  Black Maple
+                </h2>
+                <form class="px-4">
+                  <span class="text-[#999]">↳</span>
+                  with a
+                  <select
+                    class="pt-1 pb-[6px] px-[6px] bg-[#ececec] rounded-[2px] border-[1px] border-gray-400 focus:outline-none duration-150">
+                    <option value="0.75">0.75"</option>
+                    <option value="1">1"</option>
+                    <option value="1.5">1.5"</option>
+                  </select>
+                  and 1.125" depth.
+                </form>
+                <div
+                  class="flex flex-row justify-center items-center gap-2 py-4 item-container">
+                  <img
+                    src="https://d29mtkonxnc5fw.cloudfront.net/thumbs/0vVm1Nm7ek99_InxMrdkiA.jpg"
+                    alt=""
+                    class="w-[50px] h-[50px] border-[1px] border-slate-300 rounded-[4px] cursor-pointer frame-img duration-300"
+                    id="left-img" />
+                  <img
+                    src="https://d29mtkonxnc5fw.cloudfront.net/thumbs/f4CMzRP_MU2hxLeTeyAdOQ.jpg"
+                    alt=""
+                    class="w-[50px] h-[50px] border-[1px] border-slate-300 rounded-[4px] cursor-pointer frame-img duration-300"
+                    id="center-img" />
+                  <img
+                    src="https://d29mtkonxnc5fw.cloudfront.net/thumbs/5UYw60413wLPRwf1Pihxuw.jpg"
+                    alt=""
+                    class="w-[50px] h-[50px] border-[1px] border-slate-300 rounded-[4px] cursor-pointer frame-img duration-300"
+                    id="right-img" />
+                </div>
+              </div>
+
+              <!-- Matting Tab -->
+              <div class="tab hidden" id="tab2">
+                <div
+                  class="flex flex-row justify-center items-center gap-2 flex-wrap mat-tab my-5">
+                  <div
+                    data-id="none"
+                    class="p-3 duration-200 border-[1px] border-solid border-slate-300 rounded-[2px] text-[13px] font-sans item">
+                    NONE
+                  </div>
+                  <div
+                    data-id="1"
+                    class="p-3 duration-200 border-[1px] border-solid border-slate-300 rounded-[2px] text-[13px] font-sans item active">
+                    1.0"
+                  </div>
+                  <div
+                    data-id="1.5"
+                    class="p-3 duration-200 border-[1px] border-solid border-slate-300 rounded-[2px] text-[13px] font-sans item">
+                    1.5"
+                  </div>
+                  <div
+                    data-id="2"
+                    class="p-3 duration-200 border-[1px] border-solid border-slate-300 rounded-[2px] text-[13px] font-sans item">
+                    2.0"
+                  </div>
+                </div>
+
+                <p class="text-gray-500">MAT COLOR</p>
+
+                <div
+                  class="flex flex-row justify-start items-center gap-2 my-3 mat-color-tab">
+                  <div
+                    data-id="white"
+                    class="w-[36px] h-[36px] duration-200 bg-white border-[1px] border-solid border-slate-300 rounded-[2px] item active"></div>
+
+                  <div
+                    data-id="black"
+                    class="w-[36px] h-[36px] duration-200 bg-black border-[1px] border-solid border-slate-300 rounded-[2px] item"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-row justify-center items-center my-8">
+            <button
+              id="buy-btn"
+              class="border-2 border-black bg-black text-white rounded px-16 py-1 flex justify-center items-center cursor-pointer">
+              FINALIZE
+              <span class="text-2xl pl-1 pb-1">→</span>
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./js/frame.js" type="module"></script>
+  </body>
+</html>

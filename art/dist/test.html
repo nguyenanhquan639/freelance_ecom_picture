@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <title>Document</title>
+  </head>
+  <body class="m-0 p-0 bg-blue-600">
+    <div
+      style="perspective: 1000px"
+      class="container h-[60vh] w-[30vw] absolute top-[50vh] left-[50vw] translate-x-[-50%] translate-y-[-50%]"
+    >
+      <div
+        style="transform-style: preserve-3d; transform: rotateX(-90deg)"
+        class="box h-[250px] w-[250px] absolute top-[100px] left-[100px] hover:rotate-y duration-300"
+      >
+        <div
+          style="
+            border-image-source: url('https://d29mtkonxnc5fw.cloudfront.net/site_assets/black-frame-face17.jpg');
+            border-image-slice: 80;
+            border-image-repeat: stretch;
+          "
+          class="card absolute text-white bg-red-600 border-[20px] border-solid border-transparent text-3xl box-border h-[250px] translate-z"
+        >
+          <img
+            src="./images/item_1.jpg"
+            alt=""
+            class="object-cover h-[210px]"
+          />
+        </div>
+        <div
+          style="transform: rotateY(90deg)"
+          class="card absolute left-[125px] h-[250px] w-[250px] text-center py-[100px] text-white bg-black border-2 border-solid border-white text-3xl box-border"
+        >
+          Right
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
