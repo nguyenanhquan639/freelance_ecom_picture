@@ -43,9 +43,9 @@ frame_data().forEach((item) => {
 //Change Frame Style
 let itemTab = document.querySelectorAll(".item-tab");
 const frameName = document.getElementById("frame-name");
-const leftImg = document.getElementById("left-img");
-const centerImg = document.getElementById("center-img");
-const rightImg = document.getElementById("right-img");
+const leftImg = document.querySelectorAll(".left-img");
+const centerImg = document.querySelectorAll(".center-img");
+const rightImg = document.querySelectorAll(".right-img");
 const borderFrame = document.getElementById("border-frame");
 const framePrev = document.querySelector(".frame-prev");
 const frameNext = document.querySelector(".frame-next");
@@ -68,13 +68,18 @@ function changeFrameInfo(newActiveID) {
         border-image-slice: 85;
         border-image-repeat: stretch;
         `;
-      sideFrame.style = `
-        transform: rotateY(-90deg);
-        background-image: url("${item.sideFrame}")
-        `;
-      leftImg.setAttribute("src", item.corner.left);
-      centerImg.setAttribute("src", item.corner.center);
-      rightImg.setAttribute("src", item.corner.right);
+
+      sideFrame.setAttribute("src", item.sideFrame);
+
+      leftImg.forEach((index) => {
+        index.setAttribute("src", item.corner.left);
+      });
+      centerImg.forEach((index) => {
+        index.setAttribute("src", item.corner.center);
+      });
+      rightImg.forEach((index) => {
+        index.setAttribute("src", item.corner.right);
+      });
     }
   });
 }
@@ -145,14 +150,17 @@ itemTab.forEach((item) => {
             border-image-slice: 85;
             border-image-repeat: stretch;
             `;
-          sideFrame.style = `
-          transform: rotateY(-90deg);
-          background-image: url("${item.sideFrame}")
-            `;
+          sideFrame.setAttribute("src", item.sideFrame);
 
-          leftImg.setAttribute("src", item.corner.left);
-          centerImg.setAttribute("src", item.corner.center);
-          rightImg.setAttribute("src", item.corner.right);
+          leftImg.forEach((index) => {
+            index.setAttribute("src", item.corner.left);
+          });
+          centerImg.forEach((index) => {
+            index.setAttribute("src", item.corner.center);
+          });
+          rightImg.forEach((index) => {
+            index.setAttribute("src", item.corner.right);
+          });
         }
       });
     }
@@ -192,7 +200,6 @@ function slideFrameZoomImage(dir, array) {
     frameZoomImageChange(array[index]);
   } else if (dir === -1) {
     index--;
-    console.log(index);
     if (index < 0) {
       index = 0;
       return;
@@ -215,13 +222,13 @@ function frameZoomClick(e, i) {
 
 function sliderNextClick() {
   sliderNext.addEventListener("click", function () {
-    slideFrameZoomImage(1, [leftImg, centerImg, rightImg]);
+    slideFrameZoomImage(1, [leftImg[0], centerImg[0], rightImg[0]]);
   });
 }
 
 function sliderPrevClick() {
   sliderPrev.addEventListener("click", function () {
-    slideFrameZoomImage(-1, [leftImg, centerImg, rightImg]);
+    slideFrameZoomImage(-1, [leftImg[0], centerImg[0], rightImg[0]]);
   });
 }
 
@@ -237,9 +244,17 @@ function popUpChange(event, element) {
 
 buttonPopUpClick(closeBtn, -1, frameZoom);
 
-frameZoomClick(leftImg, 0);
-frameZoomClick(centerImg, 1);
-frameZoomClick(rightImg, 2);
+leftImg.forEach((index) => {
+  frameZoomClick(index, 0);
+});
+
+centerImg.forEach((index) => {
+  frameZoomClick(index, 1);
+});
+
+rightImg.forEach((index) => {
+  frameZoomClick(index, 2);
+});
 
 sliderNextClick();
 sliderPrevClick();
@@ -294,3 +309,22 @@ matColorTab.forEach((item) => {
     }
   });
 });
+
+const body = document.getElementsByTagName("body")[0];
+
+let width = borderFrame.offsetWidth;
+
+window.matchMedia("(orientation: portrait)").matches
+  ? ((sideFrame.style = `height: ${width - 0.8}px`),
+    (matSizeColor.style = `height: ${width - 18 * 2}px`))
+  : ((sideFrame.style = `height: ${width + 18 * 3 - 1}px`),
+    (matSizeColor.style = `height: ${width + 18}px`));
+
+body.onresize = function () {
+  width = borderFrame.offsetWidth;
+  window.matchMedia("(orientation: portrait)").matches
+    ? ((sideFrame.style = `height: ${width - 0.8}px`),
+      (matSizeColor.style = `height: ${width - 18 * 2}px`))
+    : ((sideFrame.style = `height: ${width + 18 * 3 - 1}px`),
+      (matSizeColor.style = `height: ${width + 18}px`));
+};

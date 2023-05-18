@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="output.css" />
     <link rel="icon" href="./images/favicon.png" />
+
     <title>OverView</title>
   </head>
   <body class="font-serif">
@@ -14,7 +15,8 @@
     <div class="hidden frame-zoom shadow-sm relative">
       <div
         class="z-20 top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] fixed w-full">
-        <div class="w-11/12 text-right mb-2 sm:w-1/2 lg:w-[40%] m-auto">
+        <div
+          class="w-11/12 landscape:w-2/5 portrait:sm:w-1/2 landscape:sm:w-1/2 landscape:lg:w-[40%] text-right mb-2 m-auto">
           <button class="cursor-pointer text-3xl text-gray-600" id="close-btn">
             ⓧ
           </button>
@@ -23,7 +25,7 @@
         <img
           src="https://d29mtkonxnc5fw.cloudfront.net/thumbs/0vVm1Nm7ek99_InxMrdkiA.jpg"
           alt=""
-          class="w-11/12 h-auto shadow-[0_0_20px_1px_rgba(0,0,0,1)] m-auto sm:w-1/2 lg:w-[40%]"
+          class="w-11/12 landscape:w-2/5 portrait:sm:w-1/2 landscape:sm:w-1/2 landscape:lg:w-[40%] h-auto shadow-[0_0_20px_1px_rgba(0,0,0,1)] m-auto"
           id="frame-zoom-img" />
       </div>
       <div
@@ -54,53 +56,83 @@
       <header class="text-center py-6 shadow-md">
         <a href="index.html" class="text-3xl"> OverView </a>
       </header>
-      <main class="w-full p-4 md:py-10 md:px-20 lg:flex lg:flex-row lg:px-0">
+      <main
+        class="w-full p-4 landscape:flex landscape:flex-row landscape:gap-3 landscape:justify-center landscape:items-center landscape:md:py-10">
         <section
-          style="perspective: 1000px"
-          class="slider lg:w-3/5 lg:flex lg:flex-col lg:justify-center lg:items-center relative">
-          <div
-            class="flex flex-row justify-center items-center py-8 relative duration-500 hover:rotate-y"
-            style="transform-style: preserve-3d">
+          class="slider landscape:w-1/2 lg:w-3/5 lg:flex lg:flex-col lg:justify-center lg:items-center relative">
+          <div style="perspective: 1000px" class="relative">
             <div
-              id="border-frame"
-              class="relative h-[200px] w-[200px] min-[375px]:h-[250px] min-[375px]:w-[250px] min-[425px]:h-[300px] min-[425px]:w-[300px] sm:h-[400px] sm:w-[400px] xl:w-[500px] xl:h-[500px] border-[18px] border-solid border-transparent duration-500 shadow-[0_0_30px_18px_rgba(0,0,0,0.3)] translate-z"
-              style="
-                border-image-source: url('https://d29mtkonxnc5fw.cloudfront.net/site_assets/black-frame-face17.jpg');
-                border-image-slice: 80;
-                border-image-repeat: stretch;
-              ">
-              <img
-                id="mat-size-color"
-                src="./images/item_1.jpg"
-                class="h-[166px] w-[200px] min-[375px]:h-[216px] min-[375px]:w-[250px] min-[425px]:h-[266px] min-[425px]:w-[300px] sm:h-[366px] sm:w-[400px] xl:w-[500px] xl:h-[465px] object-cover duration-500 p-2 bg-clip-padding bg-white" />
+              class="flex flex-row justify-center items-center py-8 relative duration-500 hover:rotate-y left-[9px]"
+              style="transform-style: preserve-3d">
+              <div
+                id="border-frame"
+                class="w-[70%] translate-z relative border-[18px] border-solid border-transparent duration-500 shadow-[0_0_30px_18px_rgba(0,0,0,0.3)]"
+                style="
+                  border-image-source: url('https://d29mtkonxnc5fw.cloudfront.net/site_assets/black-frame-face17.jpg');
+                  border-image-slice: 80;
+                  border-image-repeat: stretch;
+                ">
+                <img
+                  id="mat-size-color"
+                  src="./images/item_1.jpg"
+                  class="object-cover duration-500 p-2 bg-clip-padding bg-white" />
+              </div>
+              <div
+                class="side-frame-position relative w-[18px]"
+                style="transform: rotateY(-90deg); right: 9px">
+                <img
+                  id="side-frame"
+                  class="object-fill duration-500"
+                  src="https://d29mtkonxnc5fw.cloudfront.net/site_assets/black-vector-side9.jpg"
+                  alt="side frame" />
+              </div>
             </div>
             <div
-              id="side-frame"
-              style="
-                transform: rotateY(-90deg);
-                background-image: url('https://d29mtkonxnc5fw.cloudfront.net/site_assets/black-vector-side9.jpg');
-              "
-              class="absolute duration-500 w-[18px] left-[235px] h-[200px] min-[375px]:h-[250px] min-[375px]:left-[286px] min-[425px]:h-[300px] min-[425px]:left-[336px] sm:h-[400px] sm:left-[494px] lg:left-[390px] xl:h-[500px] xl:left-[490px]"></div>
+              class="frame-prev absolute text-lg left-0 px-2 py-1 top-1/2 landscape:lg:px-3 landscape:lg:py-2 text-white bg-[rgba(0,0,0,0.2)] hover:bg-[rgba(0,0,0,0.7)] duration-200 rounded-full portrait:min-[500px]:py-3 portrait:min-[500px]:px-4 portrait:min-[500px]:text-2xl flex flex-row justify-center items-center cursor-pointer">
+              ⬅
+            </div>
+            <div
+              class="frame-next absolute text-lg right-0 px-2 py-1 top-1/2 landscape:lg:px-3 landscape:lg:py-2 text-white bg-[rgba(0,0,0,0.2)] hover:bg-[rgba(0,0,0,0.7)] duration-200 rounded-full portrait:min-[500px]:py-3 portrait:min-[500px]:px-4 portrait:min-[500px]:text-2xl flex flex-row justify-center items-center cursor-pointer">
+              ➞
+            </div>
           </div>
 
           <div
-            class="frame-prev absolute left-[-10px] lg:left-10 top-2/4 text-white bg-[rgba(0,0,0,0.2)] hover:bg-[rgba(0,0,0,0.7)] duration-200 rounded-full w-8 h-8 flex flex-row justify-center items-center cursor-pointer md:w-10 md:h-10 md:text-xl">
-            ⬅
+            data-aos="fade-down"
+            class="flex flex-row justify-center items-center gap-2 py-4 item-container portrait:hidden">
+            <img
+              src="https://d29mtkonxnc5fw.cloudfront.net/thumbs/0vVm1Nm7ek99_InxMrdkiA.jpg"
+              alt=""
+              class="left-img w-[50px] h-[50px] border-[1px] border-slate-300 rounded-[4px] cursor-pointer frame-img duration-300" />
+            <img
+              src="https://d29mtkonxnc5fw.cloudfront.net/thumbs/f4CMzRP_MU2hxLeTeyAdOQ.jpg"
+              alt=""
+              class="center-img w-[50px] h-[50px] border-[1px] border-slate-300 rounded-[4px] cursor-pointer frame-img duration-300" />
+            <img
+              src="https://d29mtkonxnc5fw.cloudfront.net/thumbs/5UYw60413wLPRwf1Pihxuw.jpg"
+              alt=""
+              class="right-img w-[50px] h-[50px] border-[1px] border-slate-300 rounded-[4px] cursor-pointer frame-img duration-300" />
           </div>
-          <div
-            class="frame-next absolute right-[-10px] lg:right-10 top-2/4 text-white bg-[rgba(0,0,0,0.2)] hover:bg-[rgba(0,0,0,0.7)] duration-200 rounded-full w-8 h-8 flex flex-row justify-center items-center cursor-pointer md:w-10 md:h-10 md:text-xl">
-            ➞
+
+          <div class="my-4 lg:text-left portrait:hidden landscape:lg:hidden">
+            <p>
+              Amazing layered rock patterns are visible on the Adrar Plateau,
+              near the town of Atar in northwestern Mauritania. Prints are
+              completed on Epson Professional Luster Paper.
+            </p>
           </div>
         </section>
 
-        <section class="mt-9 lg:mt-0 lg:w-2/5 lg:px-8 xl:px-14">
-          <div class="text-center lg:text-left duration-500">
+        <section
+          class="mt-9 landscape:w-1/2 landscape:sm:mt-4 landscape:sm:px-8 lg:mt-0 lg:w-2/5 lg:px-8 xl:px-14 xl:mr-20">
+          <div class="text-center w-full lg:text-left">
             <h1 class="font-extralight text-3xl lg:text-5xl">
               Addis Ababa Agriculture
             </h1>
           </div>
 
-          <div class="my-4 md:text-center lg:text-left">
+          <div
+            class="my-4 md:text-center lg:text-left landscape:hidden landscape:lg:block min-[768px]:text-xl">
             <p>
               Amazing layered rock patterns are visible on the Adrar Plateau,
               near the town of Atar in northwestern Mauritania. Prints are
@@ -112,7 +144,7 @@
             <select
               name="size"
               id="size"
-              class="focus:outline-none border-2 border-dotted border-gray-400 duration-200 rounded bg-white w-[300px] p-4 my-2 min-w-max md:w-1/2 lg:w-full">
+              class="focus:outline-none border-2 border-dotted border-gray-400 duration-200 rounded bg-white w-[300px] p-4 my-2 min-w-max landscape:w-full landscape:xl:w-2/3">
               <option value="none">Select a Print Size</option>
               <option value="12x12">12.0" x 12.0"</option>
               <option value="15x15">15.0" x 15.0"</option>
@@ -165,22 +197,19 @@
                   and 1.125" depth.
                 </form>
                 <div
-                  class="flex flex-row justify-center items-center gap-2 py-4 item-container">
+                  class="flex flex-row justify-center items-center gap-2 py-4 item-container landscape:hidden">
                   <img
                     src="https://d29mtkonxnc5fw.cloudfront.net/thumbs/0vVm1Nm7ek99_InxMrdkiA.jpg"
                     alt=""
-                    class="w-[50px] h-[50px] border-[1px] border-slate-300 rounded-[4px] cursor-pointer frame-img duration-300"
-                    id="left-img" />
+                    class="left-img w-[50px] h-[50px] border-[1px] border-slate-300 rounded-[4px] cursor-pointer frame-img duration-300" />
                   <img
                     src="https://d29mtkonxnc5fw.cloudfront.net/thumbs/f4CMzRP_MU2hxLeTeyAdOQ.jpg"
                     alt=""
-                    class="w-[50px] h-[50px] border-[1px] border-slate-300 rounded-[4px] cursor-pointer frame-img duration-300"
-                    id="center-img" />
+                    class="center-img w-[50px] h-[50px] border-[1px] border-slate-300 rounded-[4px] cursor-pointer frame-img duration-300" />
                   <img
                     src="https://d29mtkonxnc5fw.cloudfront.net/thumbs/5UYw60413wLPRwf1Pihxuw.jpg"
                     alt=""
-                    class="w-[50px] h-[50px] border-[1px] border-slate-300 rounded-[4px] cursor-pointer frame-img duration-300"
-                    id="right-img" />
+                    class="right-img w-[50px] h-[50px] border-[1px] border-slate-300 rounded-[4px] cursor-pointer frame-img duration-300" />
                 </div>
               </div>
 

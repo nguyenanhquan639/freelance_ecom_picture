@@ -18,7 +18,7 @@
   }
 
   .rotate-y {
-    transform: rotateY(-50deg);
+    transform: rotateY(-60deg);
   }
   .translate-z {
     transform: translateZ(9px);
